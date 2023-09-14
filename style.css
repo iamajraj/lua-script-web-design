@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-border {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-inline-width: 1px;
+  border-inline-style: solid;
+  border-bottom-width: 4px;
+  border-bottom-style: solid;
+  border-radius: 6px;
+}
+
+.box-shadow {
+  box-shadow: 7px 7px 21px 0px rgba(189, 189, 189, 0.1),
+    28px 26px 38px 0px rgba(189, 189, 189, 0.09),
+    62px 59px 52px 0px rgba(189, 189, 189, 0.05),
+    110px 105px 61px 0px rgba(189, 189, 189, 0.01),
+    173px 165px 67px 0px rgba(189, 189, 189, 0);
+}
