@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  scroll-behavior: smooth;
+}
+
 .btn-border {
   border-top-width: 1px;
   border-top-style: solid;
@@ -18,4 +22,18 @@
     62px 59px 52px 0px rgba(189, 189, 189, 0.05),
     110px 105px 61px 0px rgba(189, 189, 189, 0.01),
     173px 165px 67px 0px rgba(189, 189, 189, 0);
+}
+
+.clip-bg {
+  clip-path: circle(108.9% at 48% 3%);
+}
+
+#navbar.active #mobile-navbar {
+  display: block;
+}
+#navbar.active .hamburger-open {
+  display: none !important;
+}
+#navbar.active .hamburger-close {
+  display: block !important;
 }
