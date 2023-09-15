@@ -11,4 +11,5 @@ hamburger.addEventListener('click', () => {
 
 Aos.init({
   mirror: false,
+  once: true,
 });
