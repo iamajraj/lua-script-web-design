@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
+* {
   scroll-behavior: smooth;
-} */
+}
 
 .btn-border {
   border-top-width: 1px;
