@@ -12,7 +12,16 @@ hamburger.addEventListener('click', () => {
 Aos.init({
   mirror: false,
   once: true,
-  disable: true,
+});
+
+// navbar scrolling
+document.addEventListener('scroll', (ev) => {
+  const isScrolling = Math.abs(document.body.getBoundingClientRect().top) > 80;
+  if (isScrolling) {
+    navbar.classList.add('scrolling');
+  } else {
+    navbar.classList.remove('scrolling');
+  }
 });
 
 // stat number count
@@ -38,4 +47,59 @@ function countToN(n, el, suffix, ms) {
     },
     ms ? Number(ms) : 50
   );
+}
+
+// SERVICE TABS
+const tabsData = [
+  {
+    title: 'Real-time Monitoring',
+    cardDescription:
+      'quas possimus doloremque dolor tenetur debitis. Labore, eligendi!',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ratione sit accusantium quas possimus doloremque dolor tenetur debitis. Labore, eligendi!',
+  },
+  {
+    title: 'Optimized Performance',
+    cardDescription: 'elit. Sed ratione sit accusantium quas',
+    description:
+      'consectetur adipisicing elit. Sed ratione sit accusantium quas possimus doloremque dolor tenetur debitis. Labore, eligendi!',
+  },
+  {
+    title: 'Robust Protection',
+    cardDescription:
+      'autem quaerat aliquid mollitia voluptatem laborum ratione quis eveniet',
+    description:
+      'Eaque quas excepturi architecto sapiente aperiam, exercitationem cupiditate distinctio autem quaerat aliquid mollitia voluptatem laborum ratione quis eveniet beatae natus eum recusandae?',
+  },
+];
+
+const featureTabs = document.querySelectorAll('.feature-tab');
+const tabContentTitle = document.querySelector('.tab-content-title');
+const tabContentDesc = document.querySelector('.tab-content-description');
+const tabContentCardDesc = document.querySelector(
+  '.tab-content-card-description'
+);
+
+// active tab classes which to add border and it has been converted to array based on the space
+const activeTabClasses =
+  "md:after:content-[''] md:after:absolute md:after:-top-2 md:after:-right-7 md:after:w-[2px] md:after:h-[170%] md:after:bg-brand border-b-[1px] md:border-b-0 border-b-brand w-max md:w-auto pb-4 md:pb-0".split(
+    ' '
+  );
+
+featureTabs.forEach((tab, idx) => {
+  tab.addEventListener('click', (e) => {
+    featureTabs.forEach((t) => {
+      t.classList.remove(...activeTabClasses);
+    });
+    e.target.classList.add(...activeTabClasses);
+    changeTabContent(idx);
+  });
+});
+
+function changeTabContent(idx) {
+  const data = tabsData[idx];
+  if (!data) return;
+  tabContentTitle.textContent = data.title;
+  tabContentDesc.textContent = data.description;
+  tabContentCardDesc = data.cardDescription;
 }

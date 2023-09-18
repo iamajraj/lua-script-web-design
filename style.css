@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   scroll-behavior: smooth;
-}
+} */
 
 .btn-border {
   border-top-width: 1px;
@@ -36,4 +36,10 @@
 }
 #navbar.active .hamburger-close {
   display: block !important;
+}
+
+#navbar.scrolling {
+  background-color: #e6f8f8 !important;
+  padding-block: 20px;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.2);
 }

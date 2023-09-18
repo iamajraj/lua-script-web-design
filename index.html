@@ -10,7 +10,7 @@
       <!-- Navbar -->
       <div
         id="navbar"
-        class="p-[20px] md:px-[120px] md:py-[31px] flex items-center justify-between sticky top-0 z-50 bg-white"
+        class="p-[20px] md:px-[120px] md:py-[31px] flex items-center justify-between sticky top-0 z-50 bg-white transition-all"
       >
         <h1 class="text-brand text-[30px] font-semibold">Lua Script</h1>
 
@@ -116,15 +116,15 @@
         </div>
 
         <!-- main links -->
-        <ul class="hidden md:flex items-center gap-[30px]">
-          <li class="leading-5 text-secondary-dark"><a href="#">Home</a></li>
-          <li class="leading-5 text-secondary-dark">
+        <ul class="hidden md:flex items-center gap-[30px] text-secondary-dark">
+          <li class="leading-5"><a href="#">Home</a></li>
+          <li class="leading-5">
             <a href="#features">Features</a>
           </li>
-          <li class="leading-5 text-secondary-dark">
+          <li class="leading-5">
             <a href="#pricing">Pricing</a>
           </li>
-          <li class="leading-5 text-secondary-dark">
+          <li class="leading-5">
             <a href="#contact">Contact</a>
           </li>
         </ul>
@@ -309,40 +309,47 @@
           Why Choose Our<br />
           Whitelisting Service
         </h1>
-        <div class="mt-[60px] md:mt-20 flex flex-col md:flex-row gap-[60px]">
+        <div
+          class="mt-[60px] md:mt-20 flex flex-col md:flex-row gap-[60px] tab-root"
+        >
           <ul class="flex flex-col gap-[26px] shrink-0">
             <li
-              class="relative text-dark font-semibold leading-[24px] md:after:content-[''] md:after:absolute md:after:-top-2 md:after:right-0 md:after:w-[2px] md:after:h-[170%] md:after:bg-brand border-b-[1px] md:border-b-0 border-b-brand w-max md:w-auto pb-4 md:pb-0"
+              class="cursor-pointer relative text-dark font-semibold leading-[24px] feature-tab md:after:content-[''] md:after:absolute md:after:-top-2 md:after:-right-7 md:after:w-[2px] md:after:h-[170%] md:after:bg-brand border-b-[1px] md:border-b-0 border-b-brand w-max md:w-auto pb-4 md:pb-0"
             >
               Real-time Monitoring
             </li>
-            <li class="text-dark font-semibold leading-[24px]">
+            <li
+              class="cursor-pointer relative text-dark font-semibold leading-[24px] feature-tab"
+            >
               Optimized Performance
             </li>
-            <li class="text-dark font-semibold leading-[24px]">
+            <li
+              class="cursor-pointer relative text-dark font-semibold leading-[24px] feature-tab"
+            >
               Robust Protection
             </li>
           </ul>
           <div class="bg-brand p-10 rounded-[12px]">
             <img src="./public/clock.svg" alt="clock" />
-            <p class="mt-[70px] text-white">
+            <p class="mt-[70px] text-white tab-content-card-description">
               The service continuously monitors Lua scripts in real-time to
               ensure compliance with whitelisting rules.
             </p>
           </div>
           <div>
             <h2
-              class="text-dark text-[25px] md:text-[30px] font-semibold leading-[33px]"
+              class="text-dark text-[25px] md:text-[30px] font-semibold leading-[33px] tab-content-title"
             >
               Real-time Monitoring
             </h2>
             <div class="h-[1px] w-full bg-secondary-dark mt-4"></div>
-            <p class="text-secondary-dark leading-[27px] mt-8">
+            <p
+              class="text-secondary-dark leading-[27px] mt-8 tab-content-description"
+            >
               Est risus mus quis proin massa pharetra proin. Sit tincidunt nunc
-              feugiat quis arcu.
-              <span class="text-dard">Risus tristique</span> massa urna sodales
-              sit orci euismod. Gravida senectus amet diam maecenas adipiscing
-              maecenas nullam. Sed semper sed nisl cras vamus id.
+              feugiat quis arcu. Risus tristique massa urna sodales sit orci
+              euismod. Gravida senectus amet diam maecenas adipiscing maecenas
+              nullam. Sed semper sed nisl cras vamus id.
             </p>
             <button
               class="flex items-center gap-5 mt-5 btn-border text-[18px] text-brand font-semibold bg-white px-5 py-3 md:px-10 md:py-4 cursor-pointer border-[#383D3F]"
