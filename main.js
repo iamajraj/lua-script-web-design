@@ -2,6 +2,10 @@ import './style.css';
 import 'aos/dist/aos.css';
 import Aos from 'aos';
 
+// window.addEventListener('load', () => {
+//   document.querySelector('html').style.scrollBehavior = 'smooth';
+// });
+
 const hamburger = document.querySelector('#hamburger');
 const navbar = document.querySelector('#navbar');
 
@@ -24,16 +28,33 @@ document.addEventListener('scroll', (ev) => {
   }
 });
 
-// stat number count
+// stat number counting when on screen
+const statRoot = document.querySelector('#stat-root');
 const countsEl = document.querySelectorAll('[data-count]');
 
-countsEl.forEach((el) => {
-  const numberToCount = el.getAttribute('data-count');
-  const suffix = el.getAttribute('data-count-suffix');
-  const ms = el.getAttribute('data-count-time');
-  countToN(Number(numberToCount), el, suffix, ms);
-});
-
+let isPlayedCountAnimation = false;
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !isPlayedCountAnimation) {
+        startCounting();
+        isPlayedCountAnimation = true;
+      }
+    });
+  },
+  {
+    rootMargin: '0px 0px -45% 0px',
+  }
+);
+observer.observe(statRoot);
+function startCounting() {
+  countsEl.forEach((el) => {
+    const numberToCount = el.getAttribute('data-count');
+    const suffix = el.getAttribute('data-count-suffix');
+    const ms = el.getAttribute('data-count-time');
+    countToN(Number(numberToCount), el, suffix, ms);
+  });
+}
 function countToN(n, el, suffix, ms) {
   let clear;
   let i = 0;
@@ -101,5 +122,5 @@ function changeTabContent(idx) {
   if (!data) return;
   tabContentTitle.textContent = data.title;
   tabContentDesc.textContent = data.description;
-  tabContentCardDesc = data.cardDescription;
+  tabContentCardDesc.textContent = data.cardDescription;
 }
