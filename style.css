@@ -46,3 +46,19 @@ html {
 #navbar.scrolling #mobile-navbar {
   background-color: #e6f8f8 !important;
 }
+
+.fade-up {
+  --initial-opacity: 0;
+  animation: fadeup 300ms ease;
+}
+
+@keyframes fadeup {
+  0% {
+    opacity: var(--initial-opacity);
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

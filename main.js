@@ -100,6 +100,8 @@ const tabContentDesc = document.querySelector('.tab-content-description');
 const tabContentCardDesc = document.querySelector(
   '.tab-content-card-description'
 );
+const tabIconRoot = document.querySelector('.tab-icon-root');
+const tabMainBtn = document.querySelector('.tab-main-btn');
 
 // active tab classes which to add border and it has been converted to array based on the space
 const activeTabClasses =
@@ -123,4 +125,24 @@ function changeTabContent(idx) {
   tabContentTitle.textContent = data.title;
   tabContentDesc.textContent = data.description;
   tabContentCardDesc.textContent = data.cardDescription;
+
+  // this is to to avoid the flash effect in the icon root container
+  tabIconRoot.style.setProperty('--initial-opacity', 1);
+
+  // add fade-up animation to the provided elements
+  addFadeUpAnimation(
+    tabContentTitle,
+    tabContentDesc,
+    tabContentCardDesc,
+    tabIconRoot,
+    tabMainBtn
+  );
+}
+
+function addFadeUpAnimation(...elements) {
+  elements.forEach((el) => {
+    el.classList.remove('fade-up');
+    void el.offsetWidth;
+    el.classList.add('fade-up');
+  });
 }
