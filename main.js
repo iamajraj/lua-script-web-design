@@ -126,9 +126,6 @@ function changeTabContent(idx) {
   tabContentDesc.textContent = data.description;
   tabContentCardDesc.textContent = data.cardDescription;
 
-  // this is to to avoid the flash effect in the icon root container
-  tabIconRoot.style.setProperty('--initial-opacity', 1);
-
   // add fade-up animation to the provided elements
   addFadeUpAnimation(
     tabContentTitle,

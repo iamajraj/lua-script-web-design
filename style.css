@@ -6,6 +6,12 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --brand-color: #008080;
+  --secondary-dark: #555;
+  --text-dark: #0c0c0c;
+}
+
 .btn-border {
   border-top-width: 1px;
   border-top-style: solid;
@@ -43,18 +49,51 @@ html {
   box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.2);
 }
 
-#navbar.scrolling #mobile-navbar {
-  background-color: #e6f8f8 !important;
+#navbar.scrolling .logo-text {
+  color: var(--brand-color);
+}
+
+#navbar.scrolling .main-links {
+  color: var(--secondary-dark);
+}
+
+#navbar.scrolling .btns a {
+  color: var(--text-dark);
+}
+#navbar.scrolling .btns button {
+  border-color: var(--brand-color);
+  color: var(--brand-color);
+  fill: var(--brand-color);
+}
+
+#navbar:not(.scrolling) #mobile-navbar {
+  background-color: var(--brand-color);
+}
+
+#navbar:not(.scrolling) #mobile-navbar ul {
+  color: white;
+}
+#navbar:not(.scrolling) #mobile-navbar .btns a {
+  color: white;
+}
+#navbar:not(.scrolling) #mobile-navbar .btns button {
+  color: white;
+  border-color: white;
+  fill: white;
+}
+
+#navbar:not(.scrolling) #hamburger svg {
+  fill: white;
+  stroke: white;
 }
 
 .fade-up {
-  --initial-opacity: 0;
   animation: fadeup 300ms ease;
 }
 
 @keyframes fadeup {
   0% {
-    opacity: var(--initial-opacity);
+    opacity: 0;
     transform: translateY(30px);
   }
   100% {
